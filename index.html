@@ -65,6 +65,7 @@ float: left;
   opacity: 0;
   transition: .5s ease;
   background-color: rgb(118, 55, 24);
+  background-image: src=();
 }
 
 .container:hover .overlay {
@@ -119,12 +120,110 @@ float: left;
   color: white;
   font-size: 20px;
   position: absolute;
-  top: 50%;
+  top: -50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  text-align:center;
+}
+
+
+body {
+  background-color: rgb(144, 58, 35);
+}
+
+
+/* Flip Cards */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
   text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: rgb(237, 67, 16);
+  color: white;
+  transform: rotateY(180deg);
+  opacity: 50%;
+}
+
+p{
+  
+  text-align: center;
+  font-size: 500%;
+  
+}
+
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #af774c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-image: #45a049;
+}
+
+.newDIV {
+  border-radius: 5px;
+  background-color: rgb(144, 58, 35);
+  padding: 20px;
+}
+
+.coffeePlayer{
+  position: fixed;
+   bottom: 10px;
+   right: -0px;
 }
 
 </style>
@@ -134,14 +233,14 @@ float: left;
 <div class="hero-image">
   <div class="hero-text">
     <h1 style="font-size:50px">Books and Baristas</h1>
-    <p>By Kameren Shoemaker</p>
+    <h1>By Kameren Shoemaker and Allan Barbosa</h1>
     
     
 
       <div class="container">
         <img src="https://images.immediate.co.uk/production/volatile/sites/30/2017/07/GettyImages-1204189958-fb4b98b.jpg" alt="Avatar" class="image">
         <div class="overlay">
-          <div class="text"><a href="https://www.starbucks.com/">Coffee</a></div>
+          <div class="text"><a href="https://www.google.com/search?q=coffee+near+me&rlz=1C1CHBF_enUS1001US1001&oq=coffee+near+me&aqs=chrome..69i57j0i402l2j0i512l7.3009j0j4&sourceid=chrome&ie=UTF-8">Coffee</a></div>
         </div>
       </div>
 
@@ -149,28 +248,65 @@ float: left;
       <div class="coffeeContainer">
         <img src="https://coffeeandironydotcom.files.wordpress.com/2014/11/books-library-book-photography.jpg" alt="Avatar" class="image">
         <div class="coffeeOverlay">
-          <div class="cofeeText"><a href="https://www.barnesandnoble.com/b/the-best-books-of-2022-so-far/_/N-2vj7">Books</a></div>
+          <div class="cofeeText"><a href="https://www.google.com/search?q=Best+Reads&rlz=1C1CHBF_enUS1001US1001&ei=nh4-Y4iXLMnm0PEP3I2suAU&ved=0ahUKEwiI3uX1qcr6AhVJMzQIHdwGC1cQ4dUDCA4&uact=5&oq=Best+Reads&gs_lp=Egdnd3Mtd2l6uAED-AEBMggQABiABBixAzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyCBAuGIAEGNQCMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABMICEBAuGMcBGNEDGOoCGLQCGEPCAgoQABjqAhi0AhhDwgIUEAAY6gIYtAIYigMYtwMY1AMY5QLCAhoQLhjHARivARjqAhi0AhiKAxi3AxjUAxjlAsICBBAAGEPCAgcQABixAxhDwgILEC4YgAQYxwEY0QPCAg4QLhiABBixAxjHARjRA8ICBxAAGMkDGEPCAgoQABixAxjJAxhDwgIIEAAYsQMYgwHCAgUQABixA8ICBxAAGIAEGArCAgoQABiABBjJAxgKwgILEAAYgAQYsQMYgwGoAgpI6C9QAFjZLnADeAHIAQCQAQCYAYQBoAG4CaoBAzIuOeIDBSA8EgEx4gMEIEEYAOIDBCBGGACIBgE&sclient=gws-wiz">Books</a></div>
         </div>
       </div>
-
 
 
   </div>
 </div>
 
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="Pumpkin newsletter.jpg" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>10/6/2022</h1>
+      <h2>-It is still not cold</h2>
+      <h2>-PUMPKIN SPICE IS BACK!</h2>
+    </div>
+  </div>
+</div>
 
 
-<h2>Fade in Overlay</h2>
-<p>Hover over the image to see the effect.</p>
-background-color
+<div class="coffeePlayer">
+<img align="right"src="Fall Music.gif" alt="Music Player" style="width:25%;height:75%;">
+
+</div>
 
 
 
 
 
+<p>WELCOME! <br>
+  This is Books and Baristas!
+  A seasonal website that promotes the best of each season and promotes relaxation! 
+</p>
 
 
-<p>Page Content..</p>
+<div class="newDIV">
+  <form action="/action_page.php">
+    <label for="fname">Tell us about your fall !</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Anything to blog about ?</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Where you from?</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+
+
+
 
 </body>
 </html>
